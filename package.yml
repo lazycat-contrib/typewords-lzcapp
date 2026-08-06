@@ -1,0 +1,17 @@
+package: community.lazycat.app.typewords
+version: 3.0.2
+name: TypeWords
+description: "Open-source English word and article typing practice tool"
+min_os_version: 1.5.0
+homepage: https://github.com/zyronon/TypeWords
+author: zyronon
+locales:
+  zh:
+    name: "TypeWords"
+    description: "学习英语，一次敲击，一点进步；记忆不再盲目，学习更高效，开源单词与文章练习工具"
+  en:
+    name: "TypeWords"
+    description: "Open-source English word and article typing practice tool"
+permissions:
+  required:
+    - net.internet

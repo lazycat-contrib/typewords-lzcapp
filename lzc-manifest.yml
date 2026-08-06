@@ -1,0 +1,31 @@
+application:
+  subdomain: typewords
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://typewords:3000/
+
+services:
+  typewords:
+    # upstream: zyronon/typewords:3.0.2
+    image: docker.1ms.run/zyronon/typewords:3.0.2
+    environment:
+      - NODE_ENV=production
+      - NUXT_HOST=0.0.0.0
+      - NUXT_PORT=3000
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "require('http').get('http://localhost:3000', (res) => process.exit(res.statusCode === 200 ? 0 : 1))"
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+usage: |
+  TypeWords 的 Web 服务在容器内监听 3000 端口，LazyCat 应用入口会转发到 http://typewords:3000/。
+
+  本包使用 docker.1ms.run/zyronon/typewords:3.0.2 镜像加速源，并只配置喵喵商店发布。

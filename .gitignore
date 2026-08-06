@@ -1,0 +1,3 @@
+.lazycat-build/*
+!.lazycat-build/.gitkeep
+*.lpk
