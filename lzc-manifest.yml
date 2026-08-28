@@ -7,8 +7,8 @@ application:
       backend: http://typewords:3000/
 services:
   typewords:
-    # upstream: zyronon/typewords:3.0.4
-    image: docker.1ms.run/zyronon/typewords:3.0.4
+    # upstream: zyronon/typewords:3.0.7
+    image: docker.1ms.run/zyronon/typewords:3.0.7
     environment:
       - NODE_ENV=production
       - NUXT_HOST=0.0.0.0
